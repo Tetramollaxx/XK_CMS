@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=18 format=3 uid="uid://blf2wyrhlus3o"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_4lihq"]
+[ext_resource type="Script" uid="uid://cth3owim6xfkb" path="res://Game/CMS/EntityData.gd" id="2_2sa2g"]
+[ext_resource type="Script" uid="uid://bvaq4txv1ufmy" path="res://Game/CMS/Demo/Tags/TagChangeBaseColor.gd" id="2_uqu14"]
+[ext_resource type="Script" uid="uid://cv2l0pm8dvd7" path="res://Game/CMS/Demo/Tags/TagDescription.gd" id="3_0l4rp"]
+[ext_resource type="Script" uid="uid://d1o7psieb4um3" path="res://Game/CMS/Demo/Tags/TagName.gd" id="4_jwyyv"]
+[ext_resource type="Script" uid="uid://7dqp4qlxd50h" path="res://Game/CMS/Demo/Tags/TagShowVisualElement.gd" id="5_d8jfh"]
+[ext_resource type="Script" uid="uid://dq447chemt7sf" path="res://Game/CMS/Demo/Tags/TagJumpOnPlay.gd" id="6_0l4rp"]
+[ext_resource type="Script" uid="uid://bwhst7hfcmb2q" path="res://Game/CMS/Demo/Tags/TagRollValueOnPlay.gd" id="7_jwyyv"]
+[ext_resource type="Script" uid="uid://daf38ii8jvl47" path="res://Game/CMS/Demo/Tags/TagMemoryLeak.gd" id="8_x3dt0"]
+
+[sub_resource type="Resource" id="Resource_am8lt"]
+script = ExtResource("2_uqu14")
+new_color = Color(0.89411765, 0.5137255, 0, 1)
+metadata/_custom_type_script = "uid://bvaq4txv1ufmy"
+
+[sub_resource type="Resource" id="Resource_x3dt0"]
+script = ExtResource("3_0l4rp")
+description = "Cool dice! Can jump when rolled and have a COOL sword and COOL GLASSES. This dice is so cool, that it can ROLL A 7"
+metadata/_custom_type_script = "uid://cv2l0pm8dvd7"
+
+[sub_resource type="Resource" id="Resource_owyfj"]
+script = ExtResource("6_0l4rp")
+metadata/_custom_type_script = "uid://dq447chemt7sf"
+
+[sub_resource type="Resource" id="Resource_nd7k5"]
+script = ExtResource("4_jwyyv")
+Name = "COOL DICE"
+metadata/_custom_type_script = "uid://d1o7psieb4um3"
+
+[sub_resource type="Resource" id="Resource_ijy1v"]
+script = ExtResource("7_jwyyv")
+AllowedValues = Array[int]([1, 2, 3, 4, 5, 6, 7])
+metadata/_custom_type_script = "uid://bwhst7hfcmb2q"
+
+[sub_resource type="Resource" id="Resource_0glta"]
+script = ExtResource("5_d8jfh")
+element_name = "SunGlasses"
+metadata/_custom_type_script = "uid://7dqp4qlxd50h"
+
+[sub_resource type="Resource" id="Resource_un0ay"]
+script = ExtResource("5_d8jfh")
+element_name = "Sword"
+metadata/_custom_type_script = "uid://7dqp4qlxd50h"
+
+[sub_resource type="Resource" id="Resource_fmiqv"]
+script = ExtResource("8_x3dt0")
+metadata/_custom_type_script = "uid://daf38ii8jvl47"
+
+[resource]
+script = ExtResource("2_2sa2g")
+Tags = Array[ExtResource("1_4lihq")]([SubResource("Resource_am8lt"), SubResource("Resource_x3dt0"), SubResource("Resource_owyfj"), SubResource("Resource_nd7k5"), SubResource("Resource_ijy1v"), SubResource("Resource_0glta"), SubResource("Resource_un0ay"), SubResource("Resource_fmiqv")])

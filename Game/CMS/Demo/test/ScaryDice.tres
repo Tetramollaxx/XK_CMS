@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=13 format=3 uid="uid://i0owbj7bppgi"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_yamv1"]
+[ext_resource type="Script" uid="uid://bvaq4txv1ufmy" path="res://Game/CMS/Demo/Tags/TagChangeBaseColor.gd" id="2_7siky"]
+[ext_resource type="Script" uid="uid://cth3owim6xfkb" path="res://Game/CMS/EntityData.gd" id="2_co0vn"]
+[ext_resource type="Script" uid="uid://7dqp4qlxd50h" path="res://Game/CMS/Demo/Tags/TagShowVisualElement.gd" id="3_7s4mf"]
+[ext_resource type="Script" uid="uid://cv2l0pm8dvd7" path="res://Game/CMS/Demo/Tags/TagDescription.gd" id="4_enpd0"]
+[ext_resource type="Script" uid="uid://d1o7psieb4um3" path="res://Game/CMS/Demo/Tags/TagName.gd" id="5_jyx1r"]
+[ext_resource type="Script" uid="uid://bwhst7hfcmb2q" path="res://Game/CMS/Demo/Tags/TagRollValueOnPlay.gd" id="6_7s4mf"]
+
+[sub_resource type="Resource" id="Resource_jvgvi"]
+script = ExtResource("2_7siky")
+new_color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+metadata/_custom_type_script = "uid://bvaq4txv1ufmy"
+
+[sub_resource type="Resource" id="Resource_354gb"]
+script = ExtResource("3_7s4mf")
+element_name = "Eyes"
+metadata/_custom_type_script = "uid://7dqp4qlxd50h"
+
+[sub_resource type="Resource" id="Resource_yv5j7"]
+script = ExtResource("4_enpd0")
+description = "it's watching you..."
+metadata/_custom_type_script = "uid://cv2l0pm8dvd7"
+
+[sub_resource type="Resource" id="Resource_x7x4c"]
+script = ExtResource("5_jyx1r")
+Name = "ScaryDice"
+metadata/_custom_type_script = "uid://d1o7psieb4um3"
+
+[sub_resource type="Resource" id="Resource_enpd0"]
+script = ExtResource("6_7s4mf")
+metadata/_custom_type_script = "uid://bwhst7hfcmb2q"
+
+[resource]
+script = ExtResource("2_co0vn")
+Tags = Array[ExtResource("1_yamv1")]([SubResource("Resource_jvgvi"), SubResource("Resource_354gb"), SubResource("Resource_yv5j7"), SubResource("Resource_x7x4c"), SubResource("Resource_enpd0")])

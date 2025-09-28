@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=14 format=3 uid="uid://bmyjnneerwkyq"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_d4fh1"]
+[ext_resource type="Script" path="res://Game/CMS/EntityData.gd" id="2_mlgoy"]
+[ext_resource type="Script" uid="uid://bvaq4txv1ufmy" path="res://Game/CMS/Demo/Tags/TagChangeBaseColor.gd" id="2_y3w0l"]
+[ext_resource type="Script" uid="uid://d1o7psieb4um3" path="res://Game/CMS/Demo/Tags/TagName.gd" id="3_eb4sd"]
+[ext_resource type="Script" uid="uid://cv2l0pm8dvd7" path="res://Game/CMS/Demo/Tags/TagDescription.gd" id="4_l3346"]
+[ext_resource type="Script" uid="uid://7dqp4qlxd50h" path="res://Game/CMS/Demo/Tags/TagShowVisualElement.gd" id="5_maea7"]
+[ext_resource type="Script" uid="uid://bwhst7hfcmb2q" path="res://Game/CMS/Demo/Tags/TagRollValueOnPlay.gd" id="6_eb4sd"]
+
+[sub_resource type="Resource" id="Resource_dnjxb"]
+script = ExtResource("2_y3w0l")
+new_color = Color(0.6854356, 0.4159465, 1, 1)
+metadata/_custom_type_script = "uid://bvaq4txv1ufmy"
+
+[sub_resource type="Resource" id="Resource_awmya"]
+script = ExtResource("3_eb4sd")
+Name = "Magician dice"
+metadata/_custom_type_script = "uid://d1o7psieb4um3"
+
+[sub_resource type="Resource" id="Resource_qkx20"]
+script = ExtResource("4_l3346")
+description = "magic.. Always even"
+metadata/_custom_type_script = "uid://cv2l0pm8dvd7"
+
+[sub_resource type="Resource" id="Resource_o3sxy"]
+script = ExtResource("5_maea7")
+element_name = "FireBall"
+metadata/_custom_type_script = "uid://7dqp4qlxd50h"
+
+[sub_resource type="Resource" id="Resource_l3346"]
+script = ExtResource("6_eb4sd")
+metadata/_custom_type_script = "uid://bwhst7hfcmb2q"
+
+[sub_resource type="Resource" id="Resource_eb4sd"]
+script = ExtResource("6_eb4sd")
+AllowedValues = Array[int]([2, 4, 6])
+metadata/_custom_type_script = "uid://bwhst7hfcmb2q"
+
+[resource]
+script = ExtResource("2_mlgoy")
+Tags = Array[ExtResource("1_d4fh1")]([SubResource("Resource_dnjxb"), SubResource("Resource_awmya"), SubResource("Resource_qkx20"), SubResource("Resource_o3sxy"), SubResource("Resource_l3346"), SubResource("Resource_eb4sd")])

@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=18 format=3 uid="uid://mlffd61ltl8a"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_72tkw"]
+[ext_resource type="Script" uid="uid://cth3owim6xfkb" path="res://Game/CMS/EntityData.gd" id="2_a5ru6"]
+[ext_resource type="Script" uid="uid://d1o7psieb4um3" path="res://Game/CMS/Demo/Tags/TagName.gd" id="2_jhwoe"]
+[ext_resource type="Script" uid="uid://cv2l0pm8dvd7" path="res://Game/CMS/Demo/Tags/TagDescription.gd" id="3_s2g0r"]
+[ext_resource type="Script" uid="uid://dq447chemt7sf" path="res://Game/CMS/Demo/Tags/TagJumpOnPlay.gd" id="4_rvm8d"]
+[ext_resource type="Script" uid="uid://bwhst7hfcmb2q" path="res://Game/CMS/Demo/Tags/TagRollValueOnPlay.gd" id="5_s2b6a"]
+[ext_resource type="Script" uid="uid://7dqp4qlxd50h" path="res://Game/CMS/Demo/Tags/TagShowVisualElement.gd" id="6_io63l"]
+[ext_resource type="Script" uid="uid://bvaq4txv1ufmy" path="res://Game/CMS/Demo/Tags/TagChangeBaseColor.gd" id="7_yods2"]
+
+[sub_resource type="Resource" id="Resource_aqlk3"]
+script = ExtResource("2_jhwoe")
+Name = "Multi dice"
+metadata/_custom_type_script = "uid://d1o7psieb4um3"
+
+[sub_resource type="Resource" id="Resource_me8p2"]
+script = ExtResource("3_s2g0r")
+description = "all tags, visual elements
+"
+metadata/_custom_type_script = "uid://cv2l0pm8dvd7"
+
+[sub_resource type="Resource" id="Resource_0afdh"]
+script = ExtResource("4_rvm8d")
+metadata/_custom_type_script = "uid://dq447chemt7sf"
+
+[sub_resource type="Resource" id="Resource_dxhe1"]
+script = ExtResource("5_s2b6a")
+AllowedValues = Array[int]([-1, -2, -3, -4, -5, -6])
+metadata/_custom_type_script = "uid://bwhst7hfcmb2q"
+
+[sub_resource type="Resource" id="Resource_k4ecu"]
+script = ExtResource("6_io63l")
+element_name = "Eyes"
+metadata/_custom_type_script = "uid://7dqp4qlxd50h"
+
+[sub_resource type="Resource" id="Resource_v64x3"]
+script = ExtResource("6_io63l")
+element_name = "Sword"
+metadata/_custom_type_script = "uid://7dqp4qlxd50h"
+
+[sub_resource type="Resource" id="Resource_ittiu"]
+script = ExtResource("6_io63l")
+element_name = "FireBall"
+metadata/_custom_type_script = "uid://7dqp4qlxd50h"
+
+[sub_resource type="Resource" id="Resource_jr34n"]
+script = ExtResource("6_io63l")
+element_name = "SunGlasses"
+metadata/_custom_type_script = "uid://7dqp4qlxd50h"
+
+[sub_resource type="Resource" id="Resource_yds0i"]
+script = ExtResource("7_yods2")
+new_color = Color(0.7411765, 0.8, 0.61960787, 1)
+metadata/_custom_type_script = "uid://bvaq4txv1ufmy"
+
+[resource]
+script = ExtResource("2_a5ru6")
+Tags = Array[ExtResource("1_72tkw")]([SubResource("Resource_aqlk3"), SubResource("Resource_me8p2"), SubResource("Resource_0afdh"), SubResource("Resource_dxhe1"), SubResource("Resource_k4ecu"), SubResource("Resource_v64x3"), SubResource("Resource_ittiu"), SubResource("Resource_jr34n"), SubResource("Resource_yds0i")])
+metadata/_custom_type_script = "uid://cth3owim6xfkb"

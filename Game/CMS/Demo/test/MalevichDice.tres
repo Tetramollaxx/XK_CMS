@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=13 format=3 uid="uid://b6y3ipqdkbg4t"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_pybex"]
+[ext_resource type="Script" uid="uid://bvaq4txv1ufmy" path="res://Game/CMS/Demo/Tags/TagChangeBaseColor.gd" id="2_0w6la"]
+[ext_resource type="Script" path="res://Game/CMS/EntityData.gd" id="2_vo2tb"]
+[ext_resource type="Script" uid="uid://d1o7psieb4um3" path="res://Game/CMS/Demo/Tags/TagName.gd" id="3_rrwk0"]
+[ext_resource type="Script" uid="uid://cv2l0pm8dvd7" path="res://Game/CMS/Demo/Tags/TagDescription.gd" id="4_5tj5y"]
+[ext_resource type="Script" uid="uid://dq447chemt7sf" path="res://Game/CMS/Demo/Tags/TagJumpOnPlay.gd" id="5_rrwk0"]
+[ext_resource type="Script" uid="uid://bwhst7hfcmb2q" path="res://Game/CMS/Demo/Tags/TagRollValueOnPlay.gd" id="6_5tj5y"]
+
+[sub_resource type="Resource" id="Resource_j34ei"]
+script = ExtResource("2_0w6la")
+metadata/_custom_type_script = "uid://bvaq4txv1ufmy"
+
+[sub_resource type="Resource" id="Resource_1kdr6"]
+script = ExtResource("3_rrwk0")
+Name = "Malevich's dice"
+metadata/_custom_type_script = "uid://d1o7psieb4um3"
+
+[sub_resource type="Resource" id="Resource_k4bwh"]
+script = ExtResource("4_5tj5y")
+description = "black square.... Jumps when played. Always odd"
+metadata/_custom_type_script = "uid://cv2l0pm8dvd7"
+
+[sub_resource type="Resource" id="Resource_5tj5y"]
+script = ExtResource("5_rrwk0")
+metadata/_custom_type_script = "uid://dq447chemt7sf"
+
+[sub_resource type="Resource" id="Resource_7upql"]
+script = ExtResource("6_5tj5y")
+AllowedValues = Array[int]([1, 3, 5])
+metadata/_custom_type_script = "uid://bwhst7hfcmb2q"
+
+[resource]
+script = ExtResource("2_vo2tb")
+Tags = Array[ExtResource("1_pybex")]([SubResource("Resource_j34ei"), SubResource("Resource_1kdr6"), SubResource("Resource_k4bwh"), SubResource("Resource_5tj5y"), SubResource("Resource_7upql")])
