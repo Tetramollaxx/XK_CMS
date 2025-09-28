@@ -9,7 +9,7 @@ static var entities: Dictionary = {}
 static var all_keys: Array[String] = []
 
 ## Включить или отключить бесячий print
-static var debug_print : bool = true
+static var debug_print : bool = false
 
 
 static func get_entity(key: String) -> Entity:

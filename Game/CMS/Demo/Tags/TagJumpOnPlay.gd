@@ -1,6 +1,7 @@
 extends Tag
 class_name TagJumpOnPlay
 
+
 var _is_in_animation
 func OnPlayedDice(dice : Dice):
 	if entity_node != dice:

@@ -5,15 +5,16 @@ extends Tag
 ## утечки можно проверить в Отладчик->Мониторинг-> кол-во объектов, ресурсов и узлов.
 class_name TagMemoryLeak
 
-var reference_to_the_data : EntityData
-var reference_to_the_tags : Array[Tag]
+#var reference_to_the_data : EntityData
+#var reference_to_the_tags : Array[Tag]
 
 
-func OnInitData(data : EntityData):
-	reference_to_the_data = data
+func OnPlayedDice(_d : Dice):
+	for t in entity_node.data.Tags:
+		pass
+		#reference_to_the_tags.append(t)
+		#(entity_node.get_parent() as Main).memory_leak.append(entity_node.data)
 	
-	for t in data.Tags:
-		reference_to_the_tags.append(t)
 
 #func OnUnregistred(): # Чтобы не было утечки памяти, нужно удалять ссылки, или вообще не создавать ссылки
 	#reference_to_the_tags = [null]

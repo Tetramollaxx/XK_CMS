@@ -9,5 +9,6 @@ class_name Dice
 @onready var rolled_value_label: Label = $RolledValueLabel
 
 
+
 func get_visual_elements():
 	return %VisualElements.get_children()

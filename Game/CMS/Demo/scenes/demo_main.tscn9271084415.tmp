@@ -1,0 +1,231 @@
+[gd_scene load_steps=13 format=3 uid="uid://grby8aqg6dvu"]
+
+[ext_resource type="Script" uid="uid://ka3pm5a4dixg" path="res://Game/CMS/Demo/scripts/demo_main.gd" id="1_43ild"]
+[ext_resource type="PackedScene" uid="uid://dvau8vwplhbfp" path="res://Game/CMS/Demo/scenes/dice.tscn" id="2_lp515"]
+[ext_resource type="Resource" uid="uid://blf2wyrhlus3o" path="res://Game/CMS/Demo/Entities/CoolSwordDice.tres" id="3_m3btw"]
+
+[sub_resource type="Gradient" id="Gradient_lp515"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.6289593, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.94849545, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m3btw"]
+gradient = SubResource("Gradient_lp515")
+width = 512
+height = 512
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_6q0fg"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tfqp0"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p428j"]
+noise = SubResource("FastNoiseLite_tfqp0")
+color_ramp = SubResource("Gradient_6q0fg")
+
+[sub_resource type="Curve" id="Curve_lp515"]
+_data = [Vector2(0, 0), 1.9503319, 5.614626, 0, 0, Vector2(0.248, 1), 0.026995018, 0.026995018, 0, 0, Vector2(1, 0), -3.0904195, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p428j"]
+bg_color = Color(0.07058824, 0.07450981, 0.16078432, 1)
+corner_radius_top_left = 35
+corner_radius_top_right = 35
+corner_radius_bottom_right = 35
+corner_radius_bottom_left = 35
+shadow_size = 35
+shadow_offset = Vector2(10.91, 14.125)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q0fg"]
+bg_color = Color(0.6431373, 0.29411766, 0.14509805, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_size = 15
+shadow_offset = Vector2(12.905, 8.32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tfqp0"]
+bg_color = Color(0.42305225, 0.18151402, 0.077236675, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_size = 15
+shadow_offset = Vector2(12.905, 8.32)
+
+[node name="DemoMain" type="Node2D"]
+script = ExtResource("1_43ild")
+
+[node name="BG" type="ColorRect" parent="."]
+offset_left = -23.0
+offset_top = -52.0
+offset_right = 1954.0
+offset_bottom = 1232.0
+color = Color(0.44705883, 0.4627451, 0.99607843, 1)
+metadata/_edit_lock_ = true
+
+[node name="Vignette" type="Sprite2D" parent="BG"]
+clip_children = 2
+position = Vector2(976, 611)
+scale = Vector2(5.4726563, 2.953125)
+texture = SubResource("GradientTexture2D_m3btw")
+metadata/_edit_lock_ = true
+
+[node name="noise" type="Sprite2D" parent="BG/Vignette"]
+modulate = Color(18.892157, 18.892157, 18.892157, 0.80784315)
+position = Vector2(0, -5.417984)
+scale = Vector2(0.9621699, 1.7830688)
+texture = SubResource("NoiseTexture2D_p428j")
+metadata/_edit_lock_ = true
+
+[node name="Dust" type="CPUParticles2D" parent="BG/Vignette"]
+position = Vector2(1.8272705, -8.80423)
+scale = Vector2(0.18272662, 0.33862433)
+amount = 4
+lifetime = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 558.335)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 15.15
+initial_velocity_max = 30.3
+angle_min = -305.5
+angle_max = 247.3
+scale_amount_min = 12.0
+scale_amount_max = 24.0
+scale_amount_curve = SubResource("Curve_lp515")
+color = Color(0.019036483, 6.4435044e-06, 0.13787168, 1)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 1043.0
+offset_top = 78.0
+offset_right = 1697.0
+offset_bottom = 996.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p428j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -255.0
+offset_top = -719.0
+offset_right = 255.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PlayButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 118.625)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/outline_size = 19
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q0fg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfqp0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6q0fg")
+text = "play dice"
+
+[node name="margin3" type="Control" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12.84)
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 118.625)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/outline_size = 19
+theme_override_font_sizes/font_size = 54
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q0fg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfqp0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6q0fg")
+text = "save as .tres"
+
+[node name="margin2" type="Control" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12.84)
+layout_mode = 2
+
+[node name="RamdomizeButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 118.625)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/outline_size = 19
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q0fg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfqp0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6q0fg")
+text = "pick random saved dice"
+
+[node name="margin" type="Control" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12.84)
+layout_mode = 2
+
+[node name="GenerateButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 118.625)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/outline_size = 19
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q0fg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfqp0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6q0fg")
+text = "generate  random dice"
+
+[node name="margin4" type="Control" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 12.84)
+layout_mode = 2
+
+[node name="DeleteDiceButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 118.625)
+layout_mode = 2
+focus_mode = 0
+theme_override_constants/outline_size = 19
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q0fg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tfqp0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6q0fg")
+text = "delete dice"
+
+[node name="DemoSceneLabel" type="RichTextLabel" parent="Panel"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -8.0
+offset_top = 35.0
+offset_right = -8.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 50
+theme_override_font_sizes/normal_font_size = 84
+bbcode_enabled = true
+text = "[wave] DEMO SCENE!!!"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dice" parent="." instance=ExtResource("2_lp515")]
+position = Vector2(543, 715)
+data = ExtResource("3_m3btw")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 617.0
+offset_top = 982.0
+offset_right = 1343.0
+offset_bottom = 1046.0
+theme_override_font_sizes/font_size = 46
+text = "save doesn't work in web build :/"
+
+[connection signal="pressed" from="Panel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/RamdomizeButton" to="." method="_on_ramdomize_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/GenerateButton" to="." method="_on_generate_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/DeleteDiceButton" to="." method="_on_delete_dice_button_pressed"]
