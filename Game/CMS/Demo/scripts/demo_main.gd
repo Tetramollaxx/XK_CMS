@@ -7,20 +7,8 @@ class_name Main
 var resources  : Array[String]
 
 
-var can_test :bool = false
-
-
-func _ready() -> void:
-	await get_tree().create_timer(10).timeout
-	can_test = true
-	await get_tree().create_timer(4).timeout
-	can_test = false
-
 
 func _process(_delta: float) -> void:
-	if can_test:
-		_on_delete_dice_button_pressed()
-		_on_ramdomize_button_pressed()
 	if Input.is_action_just_pressed("ui_accept"):
 		get_tree().reload_current_scene()
 
@@ -28,7 +16,7 @@ func _process(_delta: float) -> void:
 func _on_ramdomize_button_pressed() -> void:
 	var pos : Vector2 = Vector2(543.0, 715.0)
 	if dice:
-		print(dice.data)
+
 		pos = dice.global_position
 		dice.queue_free()
 	dice = load("res://Game/CMS/Demo/scenes/dice.tscn").instantiate()
@@ -48,7 +36,7 @@ func _on_generate_button_pressed() -> void:
 	dice = load("res://Game/CMS/Demo/scenes/dice.tscn").instantiate()
 	
 	var new_data : EntityData = EntityData.new()
-	var visual_elements_list = ["Eyes", "SunGlasses", "FireBall", "Sword"]
+	var visual_elements_list = ["Eyes", "SunGlasses", "FireBall", "Sword", "Mouth", "Ears", "Blin", "KingIsWatching"]
 	var selected_elements: Array
 	
 	for i in randi_range(1,3):

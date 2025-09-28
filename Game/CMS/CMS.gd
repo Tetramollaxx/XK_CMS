@@ -53,6 +53,15 @@ static func unregister_entity(entity: Entity) -> void:
 	if debug_print:
 		print("unregister entity: ", entity.uid, " entity count : ", entities.size())
 
+# бесполезные 2 функции, пусть будут
+static func load_resource(path : String):
+	if ResourceLoader.exists(path):
+		return ResourceLoader.load(path)
+	return null
+
+static func save_resource(res : Resource, to_path : String):
+	return ResourceSaver.save(res, to_path)
+#---------
 
 static func get_resources_in_directory(path: String) -> Array[String]:
 	var file_paths: Array[String] = []

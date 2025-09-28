@@ -120,7 +120,6 @@ func _was_visited(obj : Variant):
 func get_implementers(method_name : String) -> Array:
 	var to_return : Array[Object]
 	
-	
 	for i in range(_interactions.size() -1, -1, -1):
 		if _interactions[i] == null:
 			_interactions.remove_at(i)

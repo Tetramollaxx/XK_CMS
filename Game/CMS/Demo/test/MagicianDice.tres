@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EntityData" load_steps=14 format=3 uid="uid://bmyjnneerwkyq"]
 
 [ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_d4fh1"]
-[ext_resource type="Script" path="res://Game/CMS/EntityData.gd" id="2_mlgoy"]
+[ext_resource type="Script" uid="uid://cth3owim6xfkb" path="res://Game/CMS/EntityData.gd" id="2_mlgoy"]
 [ext_resource type="Script" uid="uid://bvaq4txv1ufmy" path="res://Game/CMS/Demo/Tags/TagChangeBaseColor.gd" id="2_y3w0l"]
 [ext_resource type="Script" uid="uid://d1o7psieb4um3" path="res://Game/CMS/Demo/Tags/TagName.gd" id="3_eb4sd"]
 [ext_resource type="Script" uid="uid://cv2l0pm8dvd7" path="res://Game/CMS/Demo/Tags/TagDescription.gd" id="4_l3346"]

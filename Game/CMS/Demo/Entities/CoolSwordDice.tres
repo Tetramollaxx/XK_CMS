@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EntityData" load_steps=18 format=3 uid="uid://blf2wyrhlus3o"]
+[gd_resource type="Resource" script_class="EntityData" load_steps=16 format=3 uid="uid://blf2wyrhlus3o"]
 
 [ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_4lihq"]
 [ext_resource type="Script" uid="uid://cth3owim6xfkb" path="res://Game/CMS/EntityData.gd" id="2_2sa2g"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://7dqp4qlxd50h" path="res://Game/CMS/Demo/Tags/TagShowVisualElement.gd" id="5_d8jfh"]
 [ext_resource type="Script" uid="uid://dq447chemt7sf" path="res://Game/CMS/Demo/Tags/TagJumpOnPlay.gd" id="6_0l4rp"]
 [ext_resource type="Script" uid="uid://bwhst7hfcmb2q" path="res://Game/CMS/Demo/Tags/TagRollValueOnPlay.gd" id="7_jwyyv"]
-[ext_resource type="Script" uid="uid://daf38ii8jvl47" path="res://Game/CMS/Demo/Tags/TagMemoryLeak.gd" id="8_x3dt0"]
 
 [sub_resource type="Resource" id="Resource_am8lt"]
 script = ExtResource("2_uqu14")
@@ -44,10 +43,6 @@ script = ExtResource("5_d8jfh")
 element_name = "Sword"
 metadata/_custom_type_script = "uid://7dqp4qlxd50h"
 
-[sub_resource type="Resource" id="Resource_fmiqv"]
-script = ExtResource("8_x3dt0")
-metadata/_custom_type_script = "uid://daf38ii8jvl47"
-
 [resource]
 script = ExtResource("2_2sa2g")
-Tags = Array[ExtResource("1_4lihq")]([SubResource("Resource_am8lt"), SubResource("Resource_x3dt0"), SubResource("Resource_owyfj"), SubResource("Resource_nd7k5"), SubResource("Resource_ijy1v"), SubResource("Resource_0glta"), SubResource("Resource_un0ay"), SubResource("Resource_fmiqv")])
+Tags = Array[ExtResource("1_4lihq")]([SubResource("Resource_am8lt"), SubResource("Resource_x3dt0"), SubResource("Resource_owyfj"), SubResource("Resource_nd7k5"), SubResource("Resource_ijy1v"), SubResource("Resource_0glta"), SubResource("Resource_un0ay")])

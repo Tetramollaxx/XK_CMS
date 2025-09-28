@@ -22,5 +22,5 @@ func _ready() -> void:
 		t.OnEntityReady()
 
 func _exit_tree() -> void:
-	data.UnregisterTags() 
+	data.Unregister() 
 	CMS.unregister_entity(self)
