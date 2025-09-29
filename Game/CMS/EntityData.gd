@@ -1,16 +1,21 @@
 extends Resource
-## Собственно сам Entity, имеет Тэги, НА ТЭГИ НЕ НАДО ДЕЛАТЬ ПОСТОЯННЫХ ССЫЛОК, ЭТО НЕ КРУТО БЛИН
+## Serializable resource that defines the configuration and behavior of an Entity.
+## Contains an array of tags (Tag resources), which each encapsulate logic or modifiers.
+##
+## This data is duplicated at runtime to ensure each Entity instance is isolated.
 class_name EntityData
 
+## All tags that define this entity's behavior
+@export var Tags: Array[Tag]
 
-@export var Tags : Array[Tag]
-var entity : Entity
-
+## Runtime reference to the owning Entity node
+var entity: Entity
 
 func Unregister():
 	for tag in Tags:
 		tag._on_unregister()
-		assert(tag.get_reference_count() <= 2, "Too many references: " + str(tag.get_reference_count()) + " to the Tag, this may create memory leak, must be <= 2")
-	assert(get_reference_count() <= 2, "Too many references: " + str(get_reference_count()) + " to the EntityData, this may create memory leak, must be <= 2")
+		assert(tag.get_reference_count() <= 2, "Memory leak detected: Tag has too many references.")
+	assert(get_reference_count() <= 2, "Memory leak detected: EntityData has too many references.")
 
-# если ты читаешь эту ошибку, значит ты не почистил ссылки на tag'и и EntityData, это может вызвать утечки памяти
+# if you get an error here, check if you are saving
+# the reference to tags or EntityData somewhere

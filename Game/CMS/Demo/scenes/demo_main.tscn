@@ -58,6 +58,7 @@ shadow_offset = Vector2(12.905, 8.32)
 
 [node name="DemoMain" type="Node2D"]
 script = ExtResource("1_43ild")
+metadata/Interaction = true
 
 [node name="BG" type="ColorRect" parent="."]
 offset_left = -23.0
@@ -158,7 +159,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_6q0fg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tfqp0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6q0fg")
-text = "pick random saved dice"
+text = "load random saved dice"
 
 [node name="margin" type="Control" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 12.84)
@@ -173,7 +174,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_6q0fg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tfqp0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6q0fg")
-text = "generate  random dice"
+text = "generate random dice"
 
 [node name="margin4" type="Control" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(0, 12.84)

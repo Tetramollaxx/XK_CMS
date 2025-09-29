@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_pybex"]
 [ext_resource type="Script" uid="uid://bvaq4txv1ufmy" path="res://Game/CMS/Demo/Tags/TagChangeBaseColor.gd" id="2_0w6la"]
-[ext_resource type="Script" path="res://Game/CMS/EntityData.gd" id="2_vo2tb"]
+[ext_resource type="Script" uid="uid://cth3owim6xfkb" path="res://Game/CMS/EntityData.gd" id="2_vo2tb"]
 [ext_resource type="Script" uid="uid://d1o7psieb4um3" path="res://Game/CMS/Demo/Tags/TagName.gd" id="3_rrwk0"]
 [ext_resource type="Script" uid="uid://cv2l0pm8dvd7" path="res://Game/CMS/Demo/Tags/TagDescription.gd" id="4_5tj5y"]
 [ext_resource type="Script" uid="uid://dq447chemt7sf" path="res://Game/CMS/Demo/Tags/TagJumpOnPlay.gd" id="5_rrwk0"]
