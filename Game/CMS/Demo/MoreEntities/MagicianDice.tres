@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cv2l0pm8dvd7" path="res://Game/CMS/Demo/Tags/TagDescription.gd" id="4_l3346"]
 [ext_resource type="Script" uid="uid://7dqp4qlxd50h" path="res://Game/CMS/Demo/Tags/TagShowVisualElement.gd" id="5_maea7"]
 [ext_resource type="Script" uid="uid://bwhst7hfcmb2q" path="res://Game/CMS/Demo/Tags/TagRollValueOnPlay.gd" id="6_eb4sd"]
-[ext_resource type="Resource" uid="uid://b6y3ipqdkbg4t" path="res://Game/CMS/Demo/test/MalevichDice.tres" id="7_mpdek"]
+[ext_resource type="Resource" uid="uid://b6y3ipqdkbg4t" path="res://Game/CMS/Demo/MoreEntities/MalevichDice.tres" id="7_mpdek"]
 
 [sub_resource type="Resource" id="Resource_dnjxb"]
 script = ExtResource("2_y3w0l")

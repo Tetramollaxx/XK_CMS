@@ -225,6 +225,8 @@ offset_bottom = 1046.0
 theme_override_font_sizes/font_size = 46
 text = "save doesn't work in web build :/"
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
 [connection signal="pressed" from="Panel/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/RamdomizeButton" to="." method="_on_ramdomize_button_pressed"]
