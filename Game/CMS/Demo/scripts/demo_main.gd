@@ -2,7 +2,7 @@ extends Node2D
 class_name Main
 
 
-@onready var dice: Dice = $Dice
+@onready var dice: Dice 
 
 var resources  : Array[String]
 
@@ -13,6 +13,22 @@ func _process(_delta: float) -> void:
 		get_tree().reload_current_scene()
 
 
+func _ready():
+	CMS.load_entity("res://Game/CMS/DemoMainConfig.tres", self)
+	
+	var data : EntityData = get_meta("entity").get_ref()
+	
+	var init_config_dice_path : String = data.GetTag(TagConfigDicePath).DicePath
+	
+	dice = load("res://Game/CMS/Demo/scenes/dice.tscn").instantiate()
+	
+	CMS.load_entity(init_config_dice_path, dice)
+	
+	dice.global_position = Vector2(512,600)
+	
+	add_child(dice)
+
+
 func _on_ramdomize_button_pressed() -> void:
 	var pos : Vector2 = Vector2(543.0, 715.0)
 	if dice:
@@ -20,10 +36,12 @@ func _on_ramdomize_button_pressed() -> void:
 		pos = dice.global_position
 		dice.queue_free()
 	dice = load("res://Game/CMS/Demo/scenes/dice.tscn").instantiate()
+
+	
 	
 	resources = CMS.get_resources_in_directory("res://Game/CMS/Demo/Entities/")
+	CMS.load_entity(resources.pick_random(), dice)
 	
-	dice.data = ResourceLoader.load(resources.pick_random())
 	dice.global_position = pos
 	add_child(dice)
 

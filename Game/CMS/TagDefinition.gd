@@ -9,7 +9,7 @@ extends Resource
 class_name Tag
 
 ## Runtime reference to the Entity node
-var entity_node: Entity
+var entity_node: Node
 
 ## Called after Tag is duplicated and assigned to Entity
 func _on_init_data(data: EntityData):

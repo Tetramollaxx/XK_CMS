@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EntityData" load_steps=5 format=3 uid="uid://baeu5v08eivae"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/TagDefinition.gd" id="1_004hn"]
+[ext_resource type="Script" uid="uid://dqw8m2okvywv0" path="res://Game/CMS/Demo/Tags/TagCongifDicePath.gd" id="2_7i7c2"]
+[ext_resource type="Script" uid="uid://cth3owim6xfkb" path="res://Game/CMS/EntityData.gd" id="2_pkgda"]
+
+[sub_resource type="Resource" id="Resource_no3oi"]
+script = ExtResource("2_7i7c2")
+DicePath = "res://Game/CMS/Demo/Entities/CoolSwordDice.tres"
+metadata/_custom_type_script = "uid://dqw8m2okvywv0"
+
+[resource]
+script = ExtResource("2_pkgda")
+Tags = Array[ExtResource("1_004hn")]([SubResource("Resource_no3oi")])
+metadata/_custom_type_script = "uid://cth3owim6xfkb"

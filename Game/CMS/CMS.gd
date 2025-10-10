@@ -7,50 +7,63 @@ extends Node
 class_name CMS
 
 ## Global registry of active Entity nodes: [uid : Entity]
-static var entities: Dictionary = {}
+#static var entities: Dictionary = {}
 
 ## All previously issued entity keys (to avoid duplication)
-static var all_keys: Array[String] = []
+#static var all_keys: Array[String] = []
+
+static var all_entities: Array[EntityData]
 
 ## Enable debug output
 static var debug_print: bool = false
 
 ## Get the Entity node by its uid, or null if not found
-static func get_entity(key: String) -> Entity:
-	return entities.get(key, null)
+#static func get_entity(key: String) -> Entity:
+	#return entities.get(key, null)
 
 ## Returns the data of a given entity by uid
-static func get_entity_data(key: String) -> EntityData:
-	var ent: Entity = get_entity(key)
-	return null if ent == null else ent.data
+#static func get_entity_data(key: String) -> EntityData:
+	#var ent: Entity = get_entity(key)
+	#return null if ent == null else ent.data
 
 ## Creates a unique ID for the given entity (based on its name and counter)
-static func generate_uid(entity: Node) -> String:
-	var base := entity.name.strip_edges()
-	if base == "":
-		base = "entity"
-	var count := 1
-	var uid := "%s_%d" % [base, count]
-	while all_keys.has(uid):
-		count += 1
-		uid = "%s_%d" % [base, count]
-	all_keys.append(uid)
-	if all_keys.size() > 150:
-		all_keys.remove_at(0)
-	return uid
+#static func generate_uid(entity: Node) -> String:
+	#var base := entity.name.strip_edges()
+	#if base == "":
+		#base = "entity"
+	#var count := 1
+	#var uid := "%s_%d" % [base, count]
+	#while all_keys.has(uid):
+		#count += 1
+		#uid = "%s_%d" % [base, count]
+	#all_keys.append(uid)
+	#if all_keys.size() > 150:
+		#all_keys.remove_at(0)
+	#return uid
 
 ## Registers an entity into the global dictionary
-static func register_entity(entity: Entity) -> void:
-	if entity.uid == "":
-		entity.uid = generate_uid(entity)
-	entities[entity.uid] = entity
-	if debug_print:
-		print("Registered entity: ", entity.uid, " (total: ", entities.size(), ")")
+#static func register_entity(entity: Entity) -> void:
+	#if entity.uid == "":
+		#entity.uid = generate_uid(entity)
+	#entities[entity.uid] = entity
+	#if debug_print:
+		#print("Registered entity: ", entity.uid, " (total: ", entities.size(), ")")
+#
+#static func unregister_entity(entity: Entity) -> void:
+	#entities.erase(entity.uid)
+	#if debug_print:
+		#print("Unregistered entity: ", entity.uid, " (total: ", entities.size(), ")")
 
-static func unregister_entity(entity: Entity) -> void:
-	entities.erase(entity.uid)
-	if debug_print:
-		print("Unregistered entity: ", entity.uid, " (total: ", entities.size(), ")")
+static func load_entity(path: String, node : Node):
+	var entity = load_resource(path)
+	if entity is EntityData:
+		entity = entity.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+		entity.InitializeEntity(node)
+		all_entities.append(entity)
+		Interactions._process_prop(entity)
+		node.set_meta("entity", weakref(entity))
+	return entity
+
 
 static func load_resource(path: String):
 	if ResourceLoader.exists(path):
