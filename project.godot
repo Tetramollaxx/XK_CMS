@@ -24,13 +24,13 @@ resources_spreadsheet_view/freeze_first_column=true
 [application]
 
 config/name="XkCMS"
-run/main_scene="uid://grby8aqg6dvu"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+run/main_scene="uid://dw1jx1nh7gkx4"
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Interactions="*res://Game/CMS/InteractionManager.gd"
+Interactor="*res://Game/CMS/Interactor.gd"
 
 [display]
 

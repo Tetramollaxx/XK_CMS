@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Entity" load_steps=5 format=3 uid="uid://bt6e1cm4kibmu"]
+
+[ext_resource type="Script" uid="uid://spp71jaioy6b" path="res://Game/CMS/Tag.gd" id="1_etpr3"]
+[ext_resource type="Script" uid="uid://bu8yxg21kfu1u" path="res://Game/CMS/Tags/demo_tag.gd" id="2_hqj2s"]
+[ext_resource type="Script" uid="uid://cth3owim6xfkb" path="res://Game/CMS/Entity.gd" id="2_ql7wm"]
+
+[sub_resource type="Resource" id="Resource_u7wkg"]
+script = ExtResource("2_hqj2s")
+metadata/_custom_type_script = "uid://bu8yxg21kfu1u"
+
+[resource]
+script = ExtResource("2_ql7wm")
+Tags = Array[ExtResource("1_etpr3")]([SubResource("Resource_u7wkg")])
+metadata/_custom_type_script = "uid://cth3owim6xfkb"

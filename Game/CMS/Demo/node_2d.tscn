@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw1jx1nh7gkx4"]
+
+[ext_resource type="Script" uid="uid://brefugcc3earg" path="res://Game/CMS/Demo/node_2d.gd" id="1_wmvhy"]
+
+[node name="Node2D" type="Node2D" unique_id=1604448219]
+script = ExtResource("1_wmvhy")
+
+[node name="Button" type="Button" parent="." unique_id=132155168]
+offset_left = 597.0
+offset_top = 356.0
+offset_right = 1255.0
+offset_bottom = 688.0
+theme_override_font_sizes/font_size = 116
+text = "click me"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
